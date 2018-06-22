@@ -387,9 +387,14 @@ function initMap() {
     };
 }
 
+// General Google map loading error
+var mapError = function() {
+    window.alert("Google Maps error! Try again!");
+}
+
 // Global Google Maps auth error detection
 function gm_authFailure() {
-    window.alert("Google Maps auth error");
+    window.alert("Google Maps auth error!");
 }
 
 // Apply bindings
