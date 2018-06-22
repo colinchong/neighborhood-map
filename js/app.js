@@ -143,11 +143,6 @@ $(document).ready(function() {
     $('.modal').modal();
 });
 
-// Global Google Maps auth error detection
-function gm_authFailure() {
-    console.log("Google Maps auth error");
-}
-
 // Create view model for initialization
 var cm = new CompaniesModel();
 
@@ -363,7 +358,7 @@ function initMap() {
                     infowindow.setContent('<div> <strong>' + place.name + '</strong><br>' + place.formatted_address + '<br>Current temp: ' + data["main"]["temp"] + '°C </div>');
                 })
                 .catch(function(error) {
-                    console.log('There is an error with your fetch: ', error.message);
+                    window.alert('There is an error with your fetch...', error.message);
                 });
         });
 
@@ -390,6 +385,11 @@ function initMap() {
             infowindow.setMarker = null;
         });
     };
+}
+
+// Global Google Maps auth error detection
+function gm_authFailure() {
+    window.alert("Google Maps auth error");
 }
 
 // Apply bindings
